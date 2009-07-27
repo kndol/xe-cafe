@@ -101,11 +101,12 @@
 
             // 원래 레이아웃 정보를 가져옴
             $layout_srl = $this->selected_layout->layout_srl;
-            $args->layout_srl = $layout_srl;
-            $output = executeQuery('layout.getLayout', $args);
-            if(!$output->toBool() || !$output->data) return $output;
-            $layout_info = $output->data;
-
+            if($layout_srl) {
+                $args->layout_srl = $layout_srl;
+                $output = executeQuery('layout.getLayout', $args);
+                if(!$output->toBool() || !$output->data) return $output;
+                $layout_info = $output->data;
+            }
             if($layout == $layout_info->layout) return new Object();
 
             $layout_info->layout = $layout;

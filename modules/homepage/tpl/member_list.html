@@ -5,6 +5,30 @@
 <h4 class="xeAdmin">{$lang->cmd_admin_menus[$act]}</h4>
 <p class="summary">{$lang->about_cafe_act[$act]}</p>
 
+<form action="./" method="get" class="adminSearch" style="margin-bottom:10px;">
+<input type="hidden" name="mid" value="{$mid}" />
+<input type="hidden" name="vid" value="{$vid}" />
+<input type="hidden" name="act" value="{$act}" />
+    <fieldset>
+
+        <select name="selected_group_srl">
+            <option value="0">{$lang->group}</option>
+            <!--@foreach($group_list as $key => $val)-->
+            <option value="{$val->group_srl}" <!--@if($selected_group_srl==$val->group_srl)-->selected="selected"<!--@end-->>{$val->title}</option>
+            <!--@end-->
+        </select>
+        <select name="search_target">
+            <option value="">{$lang->search_target}</option>
+            <!--@foreach($lang->search_target_list as $key => $val)-->
+            <option value="{$key}" <!--@if($search_target==$key)-->selected="selected"<!--@end-->>{$val}</option>
+            <!--@end-->
+        </select>
+        <input type="text" name="search_keyword" value="{htmlspecialchars($search_keyword)}" class="inputTypeText" />
+        <span class="button black strong"><input type="submit" value="{$lang->cmd_search}" /></span>
+        <a href="#" onclick="location.href='{getUrl('','module',$module,'act',$act)}';return false;" class="button"><span>{$lang->cmd_cancel}</span></a>
+    </fieldset>
+</form>
+
 <form method="post" action="./" onsubmit="return procFilter(this,update_member_group);" id="siteMembers">
     <table cellspacing="0" class="crossTable">
     <thead>
