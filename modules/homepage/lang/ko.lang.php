@@ -10,6 +10,8 @@
     $lang->cafe_title = 'Cafe 이름';
     $lang->cafe_description = 'Cafe 설명';
     $lang->cafe_banner = 'Cafe 배너이미지';
+    $lang->cafe_list = '카페 목록';
+    $lang->cafe_main_skin = '카페 메인 스킨';
     $lang->module_type = '대상';
     $lang->board = '게시판';
     $lang->page = '페이지';
@@ -63,8 +65,8 @@
         'dispHomepageCounter' => '접속 통계',
         'dispHomepageMidSetup' => '모듈 세부 설정',
     );
-    $lang->cmd_cafe_registration = 'Cafe 생성';
-    $lang->cmd_cafe_setup = 'Cafe 설정';
+    $lang->cmd_cafe_registration = '카페 생성';
+    $lang->cmd_cafe_setup = '카페 설정';
     $lang->cmd_cafe_delete = 'Cafe 삭제';
     $lang->cmd_go_home = '홈으로 이동';
     $lang->cmd_go_cafe_admin = 'Cafe 전체 관리';

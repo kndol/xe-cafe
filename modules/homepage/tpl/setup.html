@@ -18,7 +18,7 @@
         <tr>
             <th scope="row"><div>{$lang->cafe_title}</div></th>
             <td colspan="2">
-                <input type="text" name="title" value="{htmlspecialchars($homepage_info->title)}"  class="w300"/>
+                <input type="text" name="title" value="{htmlspecialchars($homepage_info->title)}" class="inputTypeText w200"/> <a href="{getFullSiteUrl($homepage_info->domain,'', 'act','dispHomepageManage')}" onclick="window.open(this.href); return false;" class="button"><span>{$lang->cmd_management}</span></a>
             </td>
         </tr>
         <tr>
@@ -32,6 +32,7 @@
                 </div>
                 <div id="accessVid" style="display:<!--@if(isSiteID($homepage_info->domain))-->block<!--@else-->none<!--@end-->; margin-top:10px;">
                     <input type="text" name="vid" value="<!--@if(isSiteID($homepage_info->domain))-->{$homepage_info->domain}<!--@end-->" class="inputTypeText w200" />
+                    <a href="{getFullSiteUrl($homepage_info->domain, '')}" onclick="window.open(this.href); return false;" class="button"><span>{$lang->cmd_move}</span></a>
                     <p>{$lang->about_vid}</p>
                 </div>
             </td>
@@ -81,19 +82,14 @@
         <tr>
             <!--@if($k==0)--><th rowspan="{count($service_modules)-1}"><div>&nbsp;</div></th><!--@end-->
             <td class="nowrap">{$v->title}</td>
-            <td class="wide">
-                <select name="allow_service_{$v->module}">
-                    <!--@for($i=0;$i<20;$i++)--><option value="{$i}" <!--@if($homepage_config->allow_service[$v->module]==$i)-->selected="selected"<!--@end-->>{$i}</option><!--@end-->
-                </select>
-            </td>
+            <td class="wide"><input type="text" name="allow_service_{$v->module}" value="{$homepage_config->allow_service[$v->module]}" class="inputTypeText w80" /></td>
         </tr>
             <!--@end-->
         <!--@end-->
         <tr class="row2">
             <th colspan="3" class="button">
                 <span class="button black strong"><input type="submit" value="{$lang->cmd_save}" accesskey="s" /></span>
-                <a href="{getSiteUrl($homepage_info->domain,'', 'act','dispHomepageManage')}" onclick="window.open(this.href); return false;" class="button"><span>{$lang->cmd_management}</span></a>
-                <a href="{getSiteUrl($homepage_info->domain, '')}" onclick="window.open(this.href); return false;" class="button"><span>{$lang->cmd_move}</span></a>
+                <span class="button"><input type="button" value="{$lang->cmd_back}" onclick="location.href=location.href.setQuery('act','dispHomepageAdminContent').setQuery('site_srl','');return false;" /></span>
             </th>
         </tr>
     </tbody>

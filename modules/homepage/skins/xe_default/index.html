@@ -3,7 +3,7 @@
 <!--@if($module_info->title)-->
 <div class="cafeHeader">
     <div class="cafeTitle">
-        <h2 class="cafeTitleText"><a href="{getUrl('','mid',$mid,'listStyle',$listStyle)}">{$module_info->title}<!--@if($module_info->sub_title)--> : <em>{$module_info->sub_title}</em><!--@end--></a></h2>
+        <h2 class="cafeTitleText"><a href="{getFullUrl('','mid',$mid,'listStyle',$listStyle)}">{$module_info->title}<!--@if($module_info->sub_title)--> : <em>{$module_info->sub_title}</em><!--@end--></a></h2>
     </div>
 
     <!--@if($module_info->comment)-->
@@ -34,22 +34,22 @@
             <!--@if($val->cafe_description)-->
                 {preg_replace('/<([^>]+)>/i','',$val->cafe_description)}
             <!--@end-->
-            <span class="url"><a href="{getSiteUrl($val->domain)}" onclick="window.open(this.href); return false;">{$val->url}</a></span>
+            <span class="url"><a href="{getFullSiteUrl($val->domain)}" onclick="window.open(this.href); return false;">{getFullSiteUrl($val->domain)}</a></span>
         </div>
         <!--@end-->
 
         <div class="pagination a1">
-            <a href="{getUrl('page','','document_srl','','division',$division,'last_division',$last_division)}" class="prevEnd">{$lang->first_page}</a> 
+            <a href="{getFullUrl('page','','document_srl','','division',$division,'last_division',$last_division)}" class="prevEnd">{$lang->first_page}</a> 
             <!--@if($page_navigation)-->
             <!--@while($page_no = $page_navigation->getNextPage())-->
                 <!--@if($page == $page_no)-->
                     <strong>{$page_no}</strong> 
                 <!--@else-->
-                    <a href="{getUrl('page',$page_no,'document_srl','','division',$division,'last_division',$last_division)}">{$page_no}</a>
+                    <a href="{getFullUrl('page',$page_no,'document_srl','','division',$division,'last_division',$last_division)}">{$page_no}</a>
                 <!--@end-->
             <!--@end-->
             <!--@end-->
-            <a href="{getUrl('page',$page_navigation->last_page,'document_srl','','division',$division,'last_division',$last_division)}" class="nextEnd">{$lang->last_page}</a>
+            <a href="{getFullUrl('page',$page_navigation->last_page,'document_srl','','division',$division,'last_division',$last_division)}" class="nextEnd">{$lang->last_page}</a>
         </div>
     </div>
 

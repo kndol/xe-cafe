@@ -75,6 +75,8 @@
         <action name="procHomepageInsertCafeBanner" type="controller" standalone="true" />
 
         <action name="dispHomepageAdminContent" type="view" standalone="true" admin_index="true" />
+        <action name="dispHomepageAdminInsert" type="view" standalone="true" />
+        <action name="dispHomepageAdminManage" type="view" standalone="true" />
         <action name="dispHomepageAdminSetup" type="view" standalone="true" />
         <action name="dispHomepageAdminSkinSetup" type="view" standalone="true" />
         <action name="dispHomepageAdminDelete" type="view" standalone="true" />

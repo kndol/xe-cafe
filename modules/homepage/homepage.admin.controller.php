@@ -17,10 +17,15 @@
             global $lang;
 
             $oModuleController = &getController('module');
+            $oLayoutAdminController = &getAdminController('layout');
+            $oLayoutModel = &getModel('layout');
             $oModuleModel = &getModel('module');
             $oHomepageModel = &getModel('homepage');
 
             $vars = Context::getRequestVars();
+            unset($vars->module);
+            unset($vars->act);
+            unset($vars->body);
 
             $args->default_layout = $vars->default_layout;
             $args->enable_change_layout = $vars->enable_change_layout;
@@ -29,11 +34,47 @@
                 if(strpos($key,'allow_service_')===false) continue;
                 $args->allow_service[substr($key, strlen('allow_service_'))] = $val;
             }
-            if($vars->site_srl) {
+
+            // 개별 카페 인 경우
+            $site_srl = $vars->site_srl;
+            if($site_srl) {
                 unset($vars->creation_group);
                 unset($vars->cafe_main_mid);
                 unset($vars->skin);
-                $oModuleController->insertModulePartConfig('homepage', $vars->site_srl, $args);
+
+                $layout = $args->default_layout;
+
+                $oModuleController->insertModulePartConfig('homepage', $site_srl, $args);
+
+                $homepage_info = $oHomepageModel->getHomepageInfo($site_srl);
+                $layout_srl = $homepage_info->layout_srl;
+                $layout_info = $oLayoutModel->getLayout($layout_srl);
+
+                if(!$layout_info || $layout_info->layout != $layout) {
+                    if($layout_info->layout_srl) if($layout_srl && $layout_info) $oLayoutAdminController->deleteLayout($layout_info->layout_srl);
+
+                    if($layout_info->extra_var && count($layout_info->extra_var)) {
+                        foreach($layout_info->extra_var as $key => $val) $extra_vars->{$key} = $val->value;
+                    }
+                    $extra_vars->main_menu = $homepage_info->first_menu_srl;
+                    $extra_vars->logo_text = $homepage_info->title;
+
+                    $layout_args->layout_srl = getNextSequence();
+                    $layout_args->site_srl = $site_srl;
+                    $layout_args->layout = $layout;
+                    $layout_args->title = $homepage_info->title;
+                    $layout_args->extra_vars = serialize($extra_vars);
+                    $oLayoutAdminController->insertLayout($layout_args);
+                    $oLayoutAdminController->updateLayout($layout_args);
+
+                    $home_args->title = $homepage_info->title;
+                    $home_args->layout_srl = $layout_args->layout_srl;
+                    $home_args->site_srl = $site_srl;
+                    $output = executeQuery('homepage.updateHomepage', $home_args);
+                    $output = executeQuery('homepage.updateHomepageModuleLayout', $home_args);
+                }
+
+            // 기본 정보 인 경우
             }else {
                 $args->access_type = $vars->access_type;
                 $args->default_domain = $vars->default_domain;
@@ -102,7 +143,15 @@
 
         function insertHomepage($title, $domain) {
             $oModuleController = &getController('module');
+            $oModuleAdminController = &getAdminController('module');
             $oModuleModel = &getModel('module');
+            $oHomepageModel = &getModel('homepage');
+            $oLayoutModel = &getModel('layout');
+            $oLayoutController = &getAdminController('layout');
+            $oMemberAdminController = &getAdminController('member');
+            $oAddonController = &getAdminController('addon');
+            $oEditorController = &getAdminController('editor');
+            $oMenuAdminController = &getAdminController('menu');
 
             $info->title = $title;
             $info->domain = $domain;
@@ -137,12 +186,10 @@
                     executeQuery('module.insertLang', $lang_args);
                 }
             }
-            $oModuleAdminController = &getAdminController('module');
             $oModuleAdminController->makeCacheDefinedLangCode($info->site_srl);
 
-            $oHomepageModel = &getModel('homepage');
             $homepage_config = $oHomepageModel->getConfig(0);
-            if(!$homepage_config->default_layout) $homepage_config->default_layout = 'cafeXE';
+            if(!$homepage_config->default_layout) $homepage_config->default_layout = 'xe_cafe';
 
             // 레이아웃 생성
             $info->layout_srl = $this->makeLayout($info->site_srl, $title,$homepage_config->default_layout);
@@ -163,17 +210,15 @@
             $this->insertMenuItem($info->menu_srl, 0, 'freeboard', '$user_lang->freeboard');
 
             // layout의 설정
-            $oLayoutModel = &getModel('layout');
             $layout_args = $oLayoutModel->getLayout($info->layout_srl);
             $layout->colorset = 'white';
 
             // vid 형식일 경우
-            if(isSiteID($domain)) $layout->index_url = getSiteUrl($domain, '');
+            if(isSiteID($domain)) $layout->index_url = getFullSiteUrl($domain, '');
             else $layout->index_url = 'http://'.$domain; 
             $layout->main_menu = $info->menu_srl;
             $layout_args->extra_vars = serialize($layout);
 
-            $oLayoutController = &getAdminController('layout');
             $oLayoutController->updateLayout($layout_args);
 
             // 생성된 게시판/ 페이지들의 레이아웃 변경
@@ -199,7 +244,6 @@
             $oModuleController->updateSite($site_args);
 
             // 기본그룹 추가
-            $oMemberAdminController = &getAdminController('member');
             unset($args);
             $args->title = '$user_lang->default_group1';
             $args->is_default = 'Y';
@@ -222,7 +266,6 @@
             $oMemberAdminController->insertGroup($args);
 
             // 기본 애드온 On
-            $oAddonController = &getAdminController('addon');
             $oAddonController->doInsert('autolink', $info->site_srl);
             $oAddonController->doInsert('counter', $info->site_srl);
             $oAddonController->doInsert('member_communication', $info->site_srl);
@@ -238,7 +281,6 @@
             $oAddonController->makeCacheFile($info->site_srl);
 
             // 기본 에디터 컴포넌트 On
-            $oEditorController = &getAdminController('editor');
             $oEditorController->insertComponent('colorpicker_text',true, $info->site_srl);
             $oEditorController->insertComponent('colorpicker_bg',true, $info->site_srl);
             $oEditorController->insertComponent('emoticon',true, $info->site_srl);
@@ -251,7 +293,6 @@
             $oEditorController->insertComponent('image_gallery',true, $info->site_srl);
 
             // 메뉴 XML 파일 생성
-            $oMenuAdminController = &getAdminController('menu');
             $oMenuAdminController->makeXmlFile($info->menu_srl, $info->site_srl);
 
             $this->add('site_srl', $info->site_srl);

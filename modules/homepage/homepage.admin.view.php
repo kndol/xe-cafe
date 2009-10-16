@@ -13,8 +13,29 @@
         }
 
         function dispHomepageAdminContent() {
-            $oLayoutModel = &getModel('layout');
             $oHomepageAdminModel = &getAdminModel('homepage');
+
+            // 생성된 카페 목록을 구함
+            $page = Context::get('page');
+            $output = $oHomepageAdminModel->getHomepageList($page);
+
+            Context::set('total_count', $output->total_count);
+            Context::set('total_page', $output->total_page);
+            Context::set('page', $output->page);
+            Context::set('homepage_list', $output->data);
+            Context::set('page_navigation', $output->page_navigation);
+
+            $this->setTemplateFile('index');
+        }
+
+        function dispHomepageAdminInsert() {
+            Context::addJsFilter($this->module_path.'tpl/filter', 'insert_homepage.xml');
+            $this->setTemplateFile('insert');
+
+        }
+
+        function dispHomepageAdminManage() {
+            $oLayoutModel = &getModel('layout');
             $oHomepageModel = &getModel('homepage');
             $oModuleModel = &getModel('module');
             $oMemberModel = &getModel('member');
@@ -43,20 +64,11 @@
             $groups = $oMemberModel->getGroups(0);
             Context::set('groups', $groups);
 
-            // 생성된 카페 목록을 구함
-            $page = Context::get('page');
-            $output = $oHomepageAdminModel->getHomepageList($page);
-
             // 카페 메인 스킨 설정 
             Context::set('skins', $oModuleModel->getSkins($this->module_path));
 
-            Context::set('total_count', $output->total_count);
-            Context::set('total_page', $output->total_page);
-            Context::set('page', $output->page);
-            Context::set('homepage_list', $output->data);
-            Context::set('page_navigation', $output->page_navigation);
+            $this->setTemplateFile('manage');
 
-            $this->setTemplateFile('index');
         }
 
         function dispHomepageAdminSetup() {

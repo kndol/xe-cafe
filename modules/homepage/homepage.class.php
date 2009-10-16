@@ -14,6 +14,7 @@
             $oModuleController = &getController('module');
 
             $oModuleController->insertTrigger('display', 'homepage', 'controller', 'triggerMemberMenu', 'before');
+			$oModuleController->insertTrigger('moduleHandler.proc', 'homepage', 'controller', 'triggerApplyLayout', 'after');
 
             return new Object();
         }
@@ -31,6 +32,8 @@
 
             // 2009. 04. 23 카페의 설명
             if(!$oDB->isColumnExists("homepages","description")) return true;
+
+            if(!$oModuleModel->getTrigger('moduleHandler.proc', 'homepage', 'controller', 'triggerApplyLayout', 'after')) return true;
 
             return false;
         }
@@ -50,6 +53,9 @@
             // 2009. 04. 23 카페의 설명
             if(!$oDB->isColumnExists("homepages","description")) 
                 $oDB->addColumn("homepages","description","text");
+
+            if(!$oModuleModel->getTrigger('moduleHandler.proc', 'homepage', 'controller', 'triggerApplyLayout', 'after') )
+                $oModuleController->insertTrigger('moduleHandler.proc', 'homepage', 'controller', 'triggerApplyLayout', 'after');
 
 
             return new Object(0, 'success_updated');

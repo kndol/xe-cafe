@@ -10,6 +10,8 @@
     $lang->cafe_title = "網站名稱";
     $lang->cafe_description = '網站說明';
     $lang->cafe_banner = '網站廣告';
+    $lang->cafe_list = 'Cafe 목록';
+    $lang->cafe_main_skin = 'Cafe 메인 스킨';
     $lang->module_type = "目標";
     $lang->board = "討論板";
     $lang->page = "頁面";

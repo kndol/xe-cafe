@@ -10,6 +10,8 @@
     $lang->cafe_title = "站点名称";
     $lang->cafe_description = 'Description of cafe';
     $lang->cafe_banner = 'Banner of Cafe';
+    $lang->cafe_list = 'Cafe 목록';
+    $lang->cafe_main_skin = 'Cafe 메인 스킨';
     $lang->module_type = "对象";
     $lang->board = "版面";
     $lang->page = "页面";
