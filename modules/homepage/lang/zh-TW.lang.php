@@ -101,6 +101,7 @@
 
     $lang->confirm_change_layout = "變換版面可能會使原來的資料無法顯示。確定要變換嗎？";
     $lang->confirm_delete_menu_item = "刪除選單：刪除選單的同時，將會使連結到選單的討論板或頁面一起刪除。確定要刪除嗎？";
+    $lang->msg_default_mid_cannot_delete = '초기화면으로 설정된 메뉴는 삭제하실 수 없습니다. Cafe 설정에서 초기화면을 변경후 삭제하세요';
     $lang->msg_module_count_exceed = '模組數量已達到上限，無法再新建模組。';
     $lang->msg_not_enabled_id = '無法使用的帳號';
     $lang->msg_same_site = '無法在虛擬網站間移動模組。';

@@ -244,29 +244,31 @@
         }
 
         function procHomepageDeleteMenuItem() {
+            $oModuleModel = &getModel('module');
+            $oMenuAdminModel = &getAdminModel('menu');
+            $oMenuAdminController = &getAdminController('menu');
+            $oHomepageModel = &getModel('homepage');
+            $oModuleController = &getController('module');
+
             $menu_item_srl = Context::get('menu_item_srl');
             if(!$menu_item_srl) return new Object(-1,'msg_invalid_request');
 
-            $oMenuAdminModel = &getAdminModel('menu');
-            $oMenuAdminController = &getAdminController('menu');
-
             $menu_info = $oMenuAdminModel->getMenuItemInfo($menu_item_srl);
             if(!$menu_info || $menu_info->menu_item_srl != $menu_item_srl) return new Object(-1,'msg_invalid_request');
+
+            $mid = $menu_info->url;
+            $module_info = $oModuleModel->getModuleInfoByMid($mid, $this->site_srl);
+            if($module_info->module_srl) {
+                $homepage_info = $oHomepageModel->getHomepageInfo($this->site_srl);
+                if($homepage_info->module_srl == $module_info->module_srl) return new Object(-1,'msg_default_mid_cannot_delete');
+            }
 
             Context::set('menu_srl', $menu_info->menu_srl);
             $output = $oMenuAdminController->procMenuAdminDeleteItem();
             if(is_object($output) && !$output->toBool()) return $output;
             $this->add('xml_file', $oMenuAdminController->get('xml_file'));
 
-            $mid = $menu_info->url;
-            if(!preg_match('/^http/i',$mid)) {
-                $oModuleModel = &getModel('module');
-                $module_info = $oModuleModel->getModuleInfoByMid($mid, $this->site_srl);
-                if($module_info->module_srl && $module_info->mid == $mid) {
-                    $oModuleController = &getController('module');
-                    $output = $oModuleController->deleteModule($module_info->module_srl);
-                }
-            }
+            if($module_info && $module_info->module_srl) $output = $oModuleController->deleteModule($module_info->module_srl);
         }
 
         function procHomepageMenuUploadButton() {

@@ -100,6 +100,7 @@
 
     $lang->confirm_change_layout = 'Si cambia el diseño de algunas de la información relativa al diseño puede desaparecer. ¿Te gustaría cambiar?';
     $lang->confirm_delete_menu_item = 'Eliminación de un elemento de menú o de la página, el módulo está conectado con el boletín se eliminarán. Si desea eliminar?';
+    $lang->msg_default_mid_cannot_delete = '초기화면으로 설정된 메뉴는 삭제하실 수 없습니다. Cafe 설정에서 초기화면을 변경후 삭제하세요';
     $lang->msg_module_count_exceed = '허용된 모듈의 개수를 초과하였기에 생성할 수 없습니다';
     $lang->msg_not_enabled_id = '사용할 수 없는 아이디입니다';
     $lang->msg_same_site = '동일한 가상 사이트의 모듈은 이동할 수가 없습니다';

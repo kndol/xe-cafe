@@ -100,6 +100,7 @@
 
     $lang->confirm_change_layout = 'レイアウトの変更時、一部のレイアウト情報が失われる可能性があります。 変更しますか?';
     $lang->confirm_delete_menu_item = 'メニューの削除時、リンクされている掲示板やページモジュールも一緒に削除されます。削除しますか?';
+    $lang->msg_default_mid_cannot_delete = '초기화면으로 설정된 메뉴는 삭제하실 수 없습니다. Cafe 설정에서 초기화면을 변경후 삭제하세요';
     $lang->msg_module_count_exceed = '許可されたモジュール数を超過したため、作成が出来ません。';
     $lang->msg_not_enabled_id = '利用出来ないIDです。';
     $lang->msg_same_site = '同一バーチャル（Virtual）サイトのモジュールは移動出来ません。';

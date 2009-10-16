@@ -101,6 +101,7 @@
     
     $lang->confirm_change_layout = "If you change the layout, some information of the layout might be reset. Would you like to change it?";
     $lang->confirm_delete_menu_item = "If you delete the menu item, the linked module(board or page) will be removed, too. Would you like to delete it?";
+    $lang->msg_default_mid_cannot_delete = '초기화면으로 설정된 메뉴는 삭제하실 수 없습니다. Cafe 설정에서 초기화면을 변경후 삭제하세요';
     $lang->msg_module_count_exceed = "The number of modules are limited, you cannot create more modules";
     $lang->msg_not_enabled_id = 'The ID cannot be used';
     $lang->msg_same_site = 'Modules cannot be moved between virtual sites.';

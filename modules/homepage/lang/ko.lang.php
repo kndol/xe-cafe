@@ -100,6 +100,7 @@
 
     $lang->confirm_change_layout = '레이아웃을 변경할 경우 레이아웃 정보들 중 일부가 사라질 수가 있습니다. 변경하시겠습니까?';
     $lang->confirm_delete_menu_item = '메뉴 항목 삭제시 연결되어 있는 게시판이나 페이지 모듈도 같이 삭제가 됩니다. 그래도 삭제하시겠습니까?';
+    $lang->msg_default_mid_cannot_delete = '초기화면으로 설정된 메뉴는 삭제하실 수 없습니다. Cafe 설정에서 초기화면을 변경후 삭제하세요';
     $lang->msg_module_count_exceed = '허용된 모듈의 개수를 초과하였기에 생성할 수 없습니다';
     $lang->msg_not_enabled_id = '사용할 수 없는 아이디입니다';
     $lang->msg_same_site = '동일한 가상 사이트의 모듈은 이동할 수가 없습니다';

@@ -100,6 +100,7 @@
 
     $lang->confirm_change_layout = "切换布局可能一些原有的信息将无法显示。你确定要切换吗？";
     $lang->confirm_delete_menu_item = "删除菜单：即同时删除链接到此菜单的版面或页面模块。你确定要删除吗？";
+    $lang->msg_default_mid_cannot_delete = '초기화면으로 설정된 메뉴는 삭제하실 수 없습니다. Cafe 설정에서 초기화면을 변경후 삭제하세요';
     $lang->msg_module_count_exceed = '허용된 모듈의 개수를 초과하였기에 생성할 수 없습니다';
     $lang->msg_not_enabled_id = '사용할 수 없는 아이디입니다';
     $lang->msg_same_site = '동일한 가상 사이트의 모듈은 이동할 수가 없습니다';
