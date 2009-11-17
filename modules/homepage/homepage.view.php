@@ -224,6 +224,7 @@
 
 		    $query_id = 'member.getMemberListWithinGroup';
 		    $args->sort_index = "member.member_srl";
+		    $args->sort_order = "desc";
             $args->page = Context::get('page');
             $args->list_count = 40;
             $args->page_count = 10;
