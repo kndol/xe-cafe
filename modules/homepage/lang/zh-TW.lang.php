@@ -1,17 +1,17 @@
 <?php
     /**
-     * @file   modules/homepage/lang/zh-TW.lang.phpzh-TW.lang.php
+     * @file   modules/homepage/lang/zh-TW.lang.php
      * @author zero (zero@nzeo.com) 翻譯︰royallin
      * @brief  虛擬網站(homepage)模組正體中文語言
      **/
 
-    $lang->cafe = "虛擬網站"; 
-    $lang->cafe_id = "網站 ID"; 
+    $lang->cafe = "虛擬網站";
+    $lang->cafe_id = "網站 ID";
     $lang->cafe_title = "網站名稱";
     $lang->cafe_description = '網站說明';
     $lang->cafe_banner = '網站廣告';
-    $lang->cafe_list = 'Cafe 목록';
-    $lang->cafe_main_skin = 'Cafe 메인 스킨';
+    $lang->cafe_list = '網站列表';
+    $lang->cafe_main_skin = '網站主要面板';
     $lang->module_type = "目標";
     $lang->board = "討論板";
     $lang->page = "頁面";
@@ -101,7 +101,7 @@
 
     $lang->confirm_change_layout = "變換版面可能會使原來的資料無法顯示。確定要變換嗎？";
     $lang->confirm_delete_menu_item = "刪除選單：刪除選單的同時，將會使連結到選單的討論板或頁面一起刪除。確定要刪除嗎？";
-    $lang->msg_default_mid_cannot_delete = '초기화면으로 설정된 메뉴는 삭제하실 수 없습니다. Cafe 설정에서 초기화면을 변경후 삭제하세요';
+    $lang->msg_default_mid_cannot_delete = '無法刪除預設的選單。 Cafe 설정에서 초기화면을 변경후 삭제하세요';
     $lang->msg_module_count_exceed = '模組數量已達到上限，無法再新建模組。';
     $lang->msg_not_enabled_id = '無法使用的帳號';
     $lang->msg_same_site = '無法在虛擬網站間移動模組。';
