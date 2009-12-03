@@ -2,8 +2,15 @@
     <tables>
         <table name="homepages" />
         <table name="sites" />
-        <table name="modules" />
         <table name="documents" />
+        <table name="modules" />
+        <table name="module_grants" alias="module_grants" type="left join">
+            <conditions>
+                <condition operation="equal" column="module_grants.module_srl" default="modules.module_srl" />
+                <condition operation="equal" column="module_grants.name" default="access" pipe="and" />
+                <condition operation="more" column="module_grants.group_srl" default="1" pipe="and" />
+            </conditions>
+        </table>
     </tables>
     <columns>
         <column name="sites.domain" alias="domain" />
@@ -14,6 +21,7 @@
         <condition operation="equal" column="homepages.site_srl" default="modules.site_srl" notnull="notnull" pipe="and" />
         <condition operation="equal" column="documents.module_srl" default="modules.module_srl" notnull="notnull" pipe="and" />
         <condition operation="notequal" column="modules.module" default="page" pipe="and" />
+        <condition operation="null" column="module_grants.group_srl" default="1" pipe="and" />
     </conditions>
     <navigation>
         <index var="sort_index" default="documents.list_order" order="asc" />
