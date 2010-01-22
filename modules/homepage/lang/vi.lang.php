@@ -12,6 +12,8 @@
     $lang->cafe_title = "Tiêu đề Cafe";
     $lang->cafe_description = 'Mô tả';
     $lang->cafe_banner = 'Banner';
+	$lang->cafe_list = 'Danh sách Cafe';
+    $lang->cafe_main_skin = 'Giao diện trang chủ';
     $lang->module_type = "Tên Module";
     $lang->board = "Board";
     $lang->page = "Trang";
@@ -101,6 +103,7 @@
     
     $lang->confirm_change_layout = "Nếu thay đổi giao diện, nội dung và thông tin đã sửa đổi sẽ bị xóa. Bạn có muốn thay đổi không?";
     $lang->confirm_delete_menu_item = "Nếu bạn xóa Menu, những địa chỉ Board và trang cũng sẽ bị xóa. Bạn có muốn xóa không?";
+	$lang->msg_default_mid_cannot_delete = 'Bạn không thể xóa Menu đã được thiết lập tại trang quản lý Cafe. Nếu muốn xóa, xin hãy trở lại trang quản lý và xóa tại đó.';
     $lang->msg_module_count_exceed = "Số Module đã bị giới hạn, bạn không thể tạo thêm được Module.";
     $lang->msg_not_enabled_id = 'ID không thể sử dụng được.';
     $lang->msg_same_site = 'Module không thể di chuyển được trước Website ảo.';
