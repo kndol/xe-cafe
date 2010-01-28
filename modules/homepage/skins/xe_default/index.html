@@ -12,9 +12,9 @@
 </div>
 <!--@end-->
 
-<div class="cafeBox">
+<div class="cafeBody cafeCE">
 
-    <div class="cafeLeftBox">
+	<div class="cafeContent">
 
         <!--@if($module_info->intro_title)-->
         <div class="intro">
@@ -25,109 +25,93 @@
         </div>
         <!--@end-->
 
-        <!--@foreach($homepage_list as $key => $val)-->
-        <div class="intro list">
-            <h3>{$val->cafe_title}</h3>
-            <!--@if($val->cafe_banner)-->
-            <a class="thumb" href="{getSiteUrl($val->domain)}" onclick="window.open(this.href); return false;"><img src="{$val->cafe_banner}" width="100" height="100" align="left"/></a>
-            <!--@end-->
-            <!--@if($val->cafe_description)-->
-                {preg_replace('/<([^>]+)>/i','',$val->cafe_description)}
-            <!--@end-->
-            <span class="url"><a href="{getFullSiteUrl($val->domain)}" onclick="window.open(this.href); return false;">{getFullSiteUrl($val->domain)}</a></span>
-        </div>
-        <!--@end-->
+		<div class="cafeList">
 
-        <div class="pagination a1">
-            <a href="{getFullUrl('page','','document_srl','','division',$division,'last_division',$last_division)}" class="prevEnd">{$lang->first_page}</a> 
+			<div class="cafeListBody">
+                <!--@if(count($homepage_list))-->
+				<ul class="memberList">
+                    <!--@foreach($homepage_list as $val)-->
+					<li>
+						<h3 class="cafeTitle"><a href="{getFullSiteUrl($val->domain)}"><!--@if($val->cafe_banner)--><img src="{$val->cafe_banner}" width="100" height="100" alt="" class="thumb" /> <!--@end-->{htmlspecialchars($val->cafe_title)}</a></h3>
+						<p class="postSummary">{cut_str(htmlspecialchars($val->cafe_description),200)}</p>
+					</li>
+                    <!--@end-->
+				</ul>
+                <!--@end-->
+			</div>
+
             <!--@if($page_navigation)-->
-            <!--@while($page_no = $page_navigation->getNextPage())-->
-                <!--@if($page == $page_no)-->
+            <div class="pagination">
+                <!--@if($page_navigation->cur_page-10>0)--><a href="{getUrl('page', $page_navigation->cur_page-10)}" class="nav prev10"><span>move prev 10 page</span></a><!--@end-->
+                <!--@if($page_navigation->cur_page>1)--><a href="{getUrl('page', $page_navigation->cur_page-1)}" class="nav prev1"><span>move prev page</span></a><!--@end-->
+                <!--@while($page_no = $page_navigation->getNextPage())-->
+                <!--@if($page_navigation->cur_page == $page_no)-->
                     <strong>{$page_no}</strong> 
                 <!--@else-->
-                    <a href="{getFullUrl('page',$page_no,'document_srl','','division',$division,'last_division',$last_division)}">{$page_no}</a>
+                    <a href="{getUrl('page',$page_no)}">{$page_no}</a>
                 <!--@end-->
+                <!--@end-->
+                <!--@if($page_navigation->cur_page<$page_navigation->total_page)--><a href="{getUrl('page', $page_navigation->cur_page+1)}" class="nav next1"><span>move next page</span></a><!--@end-->
+                <!--@if($page_navigation->cur_page+10<$page_navigation->total_page)--><a href="{getUrl('page', $page_navigation->cur_page+10)}" class="nav next10"><span>move next 10 page</span></a><!--@end-->
+            </div>
             <!--@end-->
-            <!--@end-->
-            <a href="{getFullUrl('page',$page_navigation->last_page,'document_srl','','division',$division,'last_division',$last_division)}" class="nextEnd">{$lang->last_page}</a>
-        </div>
-    </div>
-
-    <hr class="cafeHR" />
-
-    <div class="cafeRightBox">
-
+			
+		</div>
+		
+	</div>
+	
+	<hr />
+	
+	<div class="cafeExtension">
+	
         <!--@if($is_logged)-->
-        <div class="cafeContext">
-            <!--@if($isEnableCreateCafe)-->
-            <h3>{$lang->cmd_make_cafe}</h3>
-            <form action="./" method="post" onsubmit="return procFilter(this, cafe_creation);">
-                <table cellspacing="0" class="cafeTable">
-                <tr>
-                    <th><div>{$lang->cafe_id} <span>(4~12)</span></div></th>
-                </tr>
-                <tr>
-                    <td class="wide">
-                        <input type="text" name="cafe_id" class="inputTypeText cafeID" />
-                    </td>
-                </tr>
-                <tr>
-                    <th><div>{$lang->cafe_title} <span>(4~20)</span></div></th>
-                </tr>
-                <tr>
-                    <td class="wide"><input type="text" name="cafe_title" class="inputTypeText cafeTitle"/></td>
-                </tr>
-                <tr>
-                    <th><div>{$lang->cafe_description} <span>(10~200)</span></div></th>
-                </tr>
-                <tr>
-                    <td><textarea name="cafe_description" class="inputTypeTextArea cafeDescription"></textarea></td>
-                </tr>
-                <tr>
-                    <th class="button"><span class="button black strong"><input type="submit" value="{$lang->cmd_make_cafe}" /></span></th>
-                </tr>
-                </table>
-            </form>
-            <!--@end-->
-
+		<div class="userAccount">
+			<div class="userTop">
+				<h2>{sprintf($lang->msg_greeting, htmlspecialchars($logged_info->nick_name))}</h2>
+                <!--@if($logged_info->is_admin == 'Y')-->
+                <span class="tcb tcbSmall logOut"><a href="{getUrl('','module','admin','act','dispTextyleAdminList')}">{$lang->cmd_management}</a></span>
+                <!--@end-->
+			</div>
             <!--@if($my_cafes && count($my_cafes))-->
-            <h3>{$lang->mycafe_list} ({count($my_cafes)})</h3>
-            <ul>
-                <!--@foreach($my_cafes as $key => $val)-->
-                <li>
-                    <a href="{getSiteUrl($val->domain)}" onclick="window.open(this.href);return false;">{cut_str($val->cafe_title,30)}</a>
-                </li>
+			<ul class="cafeList">
+                <!--@foreach($my_cafes as $val)-->
+				<li><a href="{getFullSiteUrl($val->domain)}">{htmlspecialchars(cut_str($val->cafe_title,20))}</a> <span class="tcb tcbSmall"><a href="{getFullSiteUrl($val->domain,'','act','dispTextyleToolDashboard')}">{$lang->cmd_management}</a></span></li>
                 <!--@end-->
-            </ul>
+			</ul>
             <!--@end-->
-        </div>
+            <!--@if($isEnableCreateCafe)-->
+			<span class="tcb tcbLarge strong"><a href="{getUrl('act','dispHomepageCreate')}">{$lang->cmd_make_cafe}</a></span>
+            <!--@end-->
+		</div>
         <!--@end-->
-
-        <!--@if($newest_documents)-->
-        <div class="cafeContext">
-            <h3>{$lang->cafe_latest_documents}</h3>
-            <ul>
-                <!--@foreach($newest_documents as $key => $val)-->
-                <li>
-                    <span class="member_{$val->member_srl}">{cut_str($val->nick_name,10)}</span> - <a href="{getSiteUrl($val->domain,'document_srl',$val->document_srl)}" onclick="window.open(this.href);return false;">{cut_str($val->title,30)}</a>
-                </li>
+		
+		<div class="userUpdate">
+            <!--@if($newest_documents)-->
+            <div class="cafeSection cafeUpdate">
+                <h2>{$lang->cafe_latest_documents}</h2>
+                <ul>
+                    <!--@foreach($newest_documents as $val)-->
+                    <li><a href="{$val->getPermanentUrl()}" class="cafeTitle"><!--@if($val->thumbnailExists(39,39))--><img src="{$val->getThumbnail(39,39)}" width="39" height="39" alt="" class="userThumb" />{$val->getTitle(24)}<!--@else-->{$val->getTitle(36)}<!--@end--></a> <span class="cafeMeta"><a class="userName member_{$val->get('member_srl')}">{$val->getNickName()}</a> <span class="ymd">{$val->getRegdate("y.m.d")}</span> <span class="hm">{$val->getRegdate("H:i")}</span></span></li>
+                    <!--@end-->
+                </ul>
+            </div>
+            <!--@end-->
+		
+			<div class="cafeSection cafeUpdate">
+				<h2>{$lang->newest_comment}</h2>
+                <!--@if(count($newest_comments))-->
+				<ul>
+                    <!--@foreach($newest_comments as $val)-->
+					<li><a href="{getFullUrl('','document_srl',$val->document_srl)}">{$val->getSummary(36)}</a> <span class="cafeMeta"><a class="userName member_{$val->get('member_srl')}">{$val->getNickName()}</a> <span class="ymd">{$val->getRegdate("y.m.d")}</span> <span class="hm">{$val->getRegdate("H:i")}</span></span></li>
+                    <!--@end-->
+				</ul>
+                <!--@else-->
+                    {$lang->no_comments}
                 <!--@end-->
-            </ul>
-        </div>
-        <!--@end-->
-
-        <!--@if($newest_comments)-->
-        <div class="cafeContext">
-            <h3>{$lang->cafe_latest_comments}</h3>
-            <ul>
-                <!--@foreach($newest_comments as $key => $val)-->
-                <li>
-                    <span class="member_{$val->member_srl}">{cut_str($val->nick_name,10)}</span> - <a href="{getSiteUrl($val->domain,'document_srl',$val->document_srl)}#comment_{$val->comment_srl}" onclick="window.open(this.href);return false;">{cut_str(preg_replace('/<([^>]+)>/i','',$val->content),30)}</a>
-                </li>
-                <!--@end-->
-            </ul>
-        </div>
-        <!--@end-->
-    </div>
-
+			</div>
+			
+		</div>
+		
+	</div>
+	
 </div>

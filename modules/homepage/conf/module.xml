@@ -19,6 +19,8 @@
         <permission action="dispHomepageBoardCategoryInfo" target="manager" />
         <permission action="dispHomepageBoardExtraVars" target="manager" />
 
+        <permission action="dispHomepageCreate" target="member" />
+
         <permission action="procHomepageCafeCreation" target="member" />
         <permission action="procHomepageChangeLayout" target="manager" />
         <permission action="procHomepageChangeLanguage" target="manager" />
@@ -37,6 +39,7 @@
     </permissions>
     <actions>
         <action name="dispHomepageIndex" type="view" standalone="true" index="true" />
+        <action name="dispHomepageCreate" type="view" />
         <action name="rss" type="view" />
 
         <action name="dispHomepageManage" type="view" standalone="true" />

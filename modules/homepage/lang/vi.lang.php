@@ -108,4 +108,5 @@
     $lang->msg_not_enabled_id = 'ID không thể sử dụng được.';
     $lang->msg_same_site = 'Module không thể di chuyển được trước Website ảo.';
     $lang->about_move_module = "Module có thể di chuyển thành Site ảo.<br />Những Module di chuyển, được phép đặt ghi chú. Đồng thời, nếu ở đó tồn tại một Module tương tự, nó sẽ hiển thị thông báo lỗi. Vì vậy chỉ di chuyển khi chưa có Module nào cùng tên tồn tại ở đó.";
+    $lang->msg_greeting = 'Xin chào <strong>%s</strong>!';
 ?>
