@@ -69,13 +69,13 @@
 			<div class="userTop">
 				<h2>{sprintf($lang->msg_greeting, htmlspecialchars($logged_info->nick_name))}</h2>
                 <!--@if($logged_info->is_admin == 'Y')-->
-                <span class="tcb tcbSmall logOut"><a href="{getUrl('','module','admin','act','dispTextyleAdminList')}">{$lang->cmd_management}</a></span>
+                <span class="tcb tcbSmall logOut"><a href="{getUrl('','module','admin','act','dispHomepageAdminContent')}">{$lang->cmd_management}</a></span>
                 <!--@end-->
 			</div>
             <!--@if($my_cafes && count($my_cafes))-->
 			<ul class="cafeList">
                 <!--@foreach($my_cafes as $val)-->
-				<li><a href="{getFullSiteUrl($val->domain)}">{htmlspecialchars(cut_str($val->cafe_title,20))}</a> <span class="tcb tcbSmall"><a href="{getFullSiteUrl($val->domain,'','act','dispTextyleToolDashboard')}">{$lang->cmd_management}</a></span></li>
+				<li><a href="{getFullSiteUrl($val->domain)}">{htmlspecialchars(cut_str($val->cafe_title,26))}</a></li>
                 <!--@end-->
 			</ul>
             <!--@end-->
