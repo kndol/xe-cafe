@@ -194,10 +194,11 @@ function menuFormInsert(obj) {
             }
         }
         if(obj.module_type == 'url') {
-            jQuery("#urlForm").css("display","block");
+            jQuery("#urlForm").css("display","table-row");
             fo_obj.url.value = obj.url;
         }
         fo_obj.module_type.disabled = true;
+        fo_obj.mtype.value = obj.module_type;
     }
 
     if(typeof(obj.normal_btn)!='undefined' && obj.normal_btn) {
@@ -358,7 +359,7 @@ function doDeleteGroup(group_srl) {
 function changeMenuType(obj) {
     var sel = obj.options[obj.selectedIndex].value;
     if(sel == 'url') {
-        jQuery('#urlForm').css("display","block");
+        jQuery('#urlForm').css("display","table-row");
     } else {
         jQuery('#urlForm').css("display","none");
 

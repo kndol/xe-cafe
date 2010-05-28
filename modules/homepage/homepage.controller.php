@@ -152,6 +152,10 @@
             $source_args->parent_srl = (int)$source_args->parent_srl;
 
             $module_type = Context::get('module_type');
+            if(!$module_type) {
+                $module_type = Context::get('mtype');
+                if(!$module_type) return new Object(-1, 'msg_module_type_setting');
+            }
             $browser_title = trim(Context::get('menu_name'));
             $url = trim(Context::get('url'));
             $module_id = trim(Context::get('module_id'));

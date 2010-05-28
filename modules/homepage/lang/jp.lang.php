@@ -106,4 +106,5 @@
     $lang->msg_same_site = '同一バーチャル（Virtual）サイトのモジュールは移動出来ません。';
     $lang->about_move_module = 'バーチャル（Virtual）サイトと基本サイト間でのモジュール移動が出来ます。<br/>ただし、他のバーチャル（Virtual）サイトへのモジュールを移動したり、同名のmidがある場合、予測が出来ない不具合が有り得るので、必ずバーチャル（Virtual）サイトと基本サイト間で異なる名前のモジュールを移動してください。';
     $lang->msg_greeting = '<strong>%s</strong>さん、こんにちは。';
+    $lang->msg_module_type_setting = 'Module Type is not selected.';
 ?>

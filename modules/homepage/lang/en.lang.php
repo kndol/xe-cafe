@@ -107,4 +107,5 @@
     $lang->msg_same_site = 'Modules cannot be moved between virtual sites.';
     $lang->about_move_module = "You may move modules between default site and virtual sites.<br />Moving modules among virtual sites is note allowed. Also, if there exists a module with same mid, there can be unexpected errors, thus move only modules which have unique mid.";
     $lang->msg_greeting = 'Hello <strong>%s</strong>';
+    $lang->msg_module_type_setting = 'Module Type is not selected.';
 ?>
