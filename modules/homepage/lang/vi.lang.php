@@ -2,10 +2,11 @@
 /*			░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 			░░  * @File   :  common/lang/vi.lang.php                                              ░░
 			░░  * @Author :  zero (zero@nzeo.com)                                                 ░░
-			░░  * @Trans  :  Đào Đức Duy (webmaster@xpressengine.vn)							  ░░
+			░░  * @Trans  :  DucDuy Dao (webmaster@xpressengine.vn)								  ░░
 			░░	* @Website:  http://xpressengine.vn												  ░░
 			░░  * @Brief  :  Vietnamese Language Pack (Only basic words are included here)        ░░
-			░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░	   		*/
+			░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+*/
 
     $lang->cafe = "CafeXE"; 
     $lang->cafe_id = "Cafe ID"; 
@@ -109,5 +110,5 @@
     $lang->msg_same_site = 'Module không thể di chuyển được trước Website ảo.';
     $lang->about_move_module = "Module có thể di chuyển thành Site ảo.<br />Những Module di chuyển, được phép đặt ghi chú. Đồng thời, nếu ở đó tồn tại một Module tương tự, nó sẽ hiển thị thông báo lỗi. Vì vậy chỉ di chuyển khi chưa có Module nào cùng tên tồn tại ở đó.";
     $lang->msg_greeting = 'Xin chào <strong>%s</strong>!';
-    $lang->msg_module_type_setting = 'Module Type is not selected.';
+    $lang->msg_module_type_setting = 'Định dạng Module chưa được chọn.';
 ?>
