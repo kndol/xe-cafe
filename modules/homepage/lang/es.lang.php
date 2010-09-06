@@ -1,7 +1,7 @@
 <?php
     /**
      * @file   es.lang.php
-     * @author zero (zero@nzeo.com)
+     * @author NHN (developers@xpressengine.com)
      * @brief  CafeXE (homepage) del módulo, el idioma por defecto
      **/
 

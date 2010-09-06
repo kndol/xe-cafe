@@ -1,7 +1,7 @@
 <?php
     /**
      * @class  homepageSmartphone
-     * @author zero (skklove@gmail.com)
+     * @author NHN (developers@xpressengine.com)
      * @brief  homepage 모듈의 SmartPhone class
      **/
 

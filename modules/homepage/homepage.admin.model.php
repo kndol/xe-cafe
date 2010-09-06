@@ -1,7 +1,7 @@
 <?php
     /**
      * @class  homepageAdminModel
-     * @author zero (zero@nzeo.com)
+     * @author NHN (developers@xpressengine.com)
      * @brief  homepage 모듈의 admin model class
      **/
 

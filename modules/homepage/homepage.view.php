@@ -1,7 +1,7 @@
 <?php
     /**
      * @class  homepageView
-     * @author zero (zero@nzeo.com)
+     * @author NHN (developers@xpressengine.com)
      * @brief  homepage 모듈의 view class
      **/
 
