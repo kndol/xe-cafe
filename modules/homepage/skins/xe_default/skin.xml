@@ -3,7 +3,7 @@
     <title xml:lang="ko">Cafe 기본 Skin</title>
 	<title xml:lang="vi">Skin Cafe mặc định</title>
     <title xml:lang="jp">Cafe用デフォルトスキン</title>
-    <title xml:lang="zh-TW">虛擬網站預設面板</title>
+    <title xml:lang="zh-TW">網站預設面板</title>
     <description xml:lang="ko">
         Cafe 기본 스킨입니다.
     </description>
@@ -14,7 +14,7 @@
         Cafe用のデフォルトスキンです。
     </description>
     <description xml:lang="zh-TW">
-        虛擬網站預設面板。
+        網站預設面板。
     </description>
     <version>0.1</version>
     <date>2009-04-03</date>
@@ -72,41 +72,41 @@
             <title xml:lang="ko">카페 소개 제목</title>
 			<title xml:lang="vi">Tiêu đề mô tả</title>
             <title xml:lang="jp">Cafeの紹介キャッチ</title>
-            <title xml:lang="zh-TW">虛擬網站標題</title>
+            <title xml:lang="zh-TW">網站標題</title>
             <description xml:lang="ko">소개할 카페의 제목을 입력해주세요. (메인 노출)</description>
 			<description xml:lang="vi">Hãy nhập tiêu đề mô tả. (Sẽ hiển thị trên trang chính)</description>
             <description xml:lang="jp">紹介するCafeのキャッチを入力して下さい。 (メインへ公開)</description>
-            <description xml:lang="zh-TW">請輸入虛擬網站的標題。 (メインへ公開)</description>
+            <description xml:lang="zh-TW">請輸入網站的標題。 (首頁顯示)</description>
         </var>
         <var name="intro_description" type="textarea">
             <title xml:lang="ko">카페 소개 내용</title>
 			<title xml:lang="vi">Nội dung mô tả</title>
             <title xml:lang="jp">Cafeの紹介詳細</title>
-            <title xml:lang="zh-TW">虛擬網站說明</title>
+            <title xml:lang="zh-TW">網站說明</title>
             <description xml:lang="ko">소개할 카페의 내용을 입력해주세요. (메인 노출)</description>
 			<description xml:lang="vi">Hãy nhập nội dung mô tả. (Sẽ hiển thị trên trang chính)</description>
             <description xml:lang="jp">紹介するCafeの詳細説明を入力して下さい。 (メインへ公開)</description>
-            <description xml:lang="zh-TW">請輸入虛擬網站的簡介。 (メインへ公開)</description>
+            <description xml:lang="zh-TW">請輸入網站的簡介。 (首頁顯示)</description>
         </var>
         <var name="intro_image" type="image">
             <title xml:lang="ko">카페 소개 이미지</title>
 			<title xml:lang="vi">Hình giới thiệu</title>
             <title xml:lang="jp">Cafeの紹介イメージ</title>
-            <title xml:lang="zh-TW">虛擬網站圖片</title>
+            <title xml:lang="zh-TW">網站圖片</title>
             <description xml:lang="ko">소개할 카페의 내용에 포함되는 이미지를 등록해주세요. (메인 노출)</description>
 			<description xml:lang="vi">Hình ảnh giới thiệu về Cafe sẽ hiển thị tại trang chính.</description>
             <description xml:lang="jp">紹介するCafeの内容に表示するイメージを登録して下さい。 (メインへ公開)</description>
-            <description xml:lang="zh-TW">請輸入虛擬網站想要使用的背景圖片。 (メインへ公開)</description>
+            <description xml:lang="zh-TW">請輸入網站想要使用的背景圖片。 (首頁顯示)</description>
         </var>
         <var name="intro_url" type="text">
             <title xml:lang="ko">카페 소개 링크 </title>
 			<title xml:lang="vi">URL giới thiệu</title>
             <title xml:lang="jp">Cafeの紹介URL</title>
-            <title xml:lang="zh-TW">虛擬網站連結</title>
+            <title xml:lang="zh-TW">網站連結</title>
             <description xml:lang="ko">소개할 카페의 링크를 입력해주세요. (http:// 모두 포함)</description>
 			<description xml:lang="vi">URL trang giới thiệu về Cafe. (Bao gồm cả http://)</description>
             <description xml:lang="jp">紹介するCafeのURLを入力して下さい。 (http:// を含む)</description>
-            <description xml:lang="zh-TW">請輸入虛擬網站連結。 (包含http:// )</description>
+            <description xml:lang="zh-TW">請輸入網站連結。 (包含http:// )</description>
         </var>
     </extra_vars>
 </skin>
