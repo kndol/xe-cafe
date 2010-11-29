@@ -241,6 +241,7 @@
             // site의 index_module_srl 을 변경
             $site_args->site_srl = $info->site_srl;
             $site_args->index_module_srl = $info->module->home_srl;
+            $site_args->domain = $domain;
             $oModuleController->updateSite($site_args);
 
             // 기본그룹 추가
