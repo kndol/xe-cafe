@@ -9,6 +9,7 @@
 */
 
     $lang->cafe = "CafeXE"; 
+	$lang->cafe_management = 'CafeXE 관리';
     $lang->cafe_id = "Cafe ID"; 
     $lang->cafe_title = "Tiêu đề Cafe";
     $lang->cafe_description = 'Mô tả';

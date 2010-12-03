@@ -1,11 +1,12 @@
 <?php
     /**
      * @file   es.lang.php
-     * @author NHN (developers@xpressengine.com)
+     * @author zero (zero@nzeo.com)
      * @brief  CafeXE (homepage) del módulo, el idioma por defecto
      **/
 
     $lang->cafe = 'CafeXE'; 
+	$lang->cafe_management = 'CafeXE 관리';
     $lang->cafe_id = "카페 접속 ID"; 
     $lang->cafe_title = 'Nombre de café';
     $lang->cafe_description = 'Description of cafe';
@@ -105,6 +106,4 @@
     $lang->msg_not_enabled_id = '사용할 수 없는 아이디입니다';
     $lang->msg_same_site = '동일한 가상 사이트의 모듈은 이동할 수가 없습니다';
     $lang->about_move_module = '가상사이트와 기본사이트간의 모듈을 옮길 수 있습니다.<br/>다만 가상사이트끼리 모듈을 이동하거나 같은 이름의 mid가 있을 경우 예기치 않은 오류가 생길 수 있으니 꼭 가상 사이트와 기본 사이트간의 다른 이름을 가지는 모듈만 이동하세요';
-    $lang->msg_greeting = 'Hello <strong>%s</strong>';
-    $lang->msg_module_type_setting = 'Module Type is not selected.';
 ?>

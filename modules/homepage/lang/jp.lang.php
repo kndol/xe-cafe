@@ -1,11 +1,12 @@
 <?php
     /**
      * @file   modules/homepage/lang/jp.lang.php
-     * @author NHN (developers@xpressengine.com)　翻訳：ミニミ
+     * @author zero (zero@nzeo.com)　翻訳：ミニミ
      * @brief  CafeXE(homepage)モジュールの日本語言語パッケージ（基本的な内容のみ）
      **/
 
     $lang->cafe = 'CafeXE'; 
+	$lang->cafe_management = 'CafeXE管理';
     $lang->cafe_id = "CafeへのアクセスID"; 
     $lang->cafe_title = 'Cafe名';
     $lang->cafe_description = 'Cafeの説明';
@@ -100,11 +101,9 @@
 
     $lang->confirm_change_layout = 'レイアウトの変更時、一部のレイアウト情報が失われる可能性があります。 変更しますか?';
     $lang->confirm_delete_menu_item = 'メニューの削除時、リンクされている掲示板やページモジュールも一緒に削除されます。削除しますか?';
-    $lang->msg_default_mid_cannot_delete = '初期値としてトップページに設定されたメニューは削除出来ません。 Cafe設定にて、初期ページの変更後、削除して下さい。';
+    $lang->msg_default_mid_cannot_delete = '初期画面に設定されたメニューは削除できません。Cafe設定にて初期画面を変更してから削除して下さい。';
     $lang->msg_module_count_exceed = '許可されたモジュール数を超過したため、作成が出来ません。';
     $lang->msg_not_enabled_id = '利用出来ないIDです。';
     $lang->msg_same_site = '同一バーチャル（Virtual）サイトのモジュールは移動出来ません。';
     $lang->about_move_module = 'バーチャル（Virtual）サイトと基本サイト間でのモジュール移動が出来ます。<br/>ただし、他のバーチャル（Virtual）サイトへのモジュールを移動したり、同名のmidがある場合、予測が出来ない不具合が有り得るので、必ずバーチャル（Virtual）サイトと基本サイト間で異なる名前のモジュールを移動してください。';
-    $lang->msg_greeting = '<strong>%s</strong>さん、こんにちは。';
-    $lang->msg_module_type_setting = 'Module Type is not selected.';
 ?>

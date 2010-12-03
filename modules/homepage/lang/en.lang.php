@@ -1,17 +1,18 @@
 <?php
     /**
      * @file   en.lang.php
-     * @author NHN (developers@xpressengine.com)
+     * @author zero (zero@nzeo.com)
      * @brief  Default language pack for the CafeXE module.
      **/
 
     $lang->cafe = "CafeXE"; 
+	$lang->cafe_management = 'CafeXE Management';
     $lang->cafe_id = "Cafe ID"; 
     $lang->cafe_title = "Title of cafe";
     $lang->cafe_description = 'Description of cafe';
     $lang->cafe_banner = 'Banner of Cafe';
-    $lang->cafe_list = 'Cafe 목록';
-    $lang->cafe_main_skin = 'Cafe 메인 스킨';
+    $lang->cafe_list = 'Cafe List';
+    $lang->cafe_main_skin = 'Cafe Main Skin';
     $lang->module_type = "Type of target module";
     $lang->board = "Board";
     $lang->page = "Page";
@@ -101,11 +102,9 @@
     
     $lang->confirm_change_layout = "If you change the layout, some information of the layout might be reset. Would you like to change it?";
     $lang->confirm_delete_menu_item = "If you delete the menu item, the linked module(board or page) will be removed, too. Would you like to delete it?";
-    $lang->msg_default_mid_cannot_delete = '초기화면으로 설정된 메뉴는 삭제하실 수 없습니다. Cafe 설정에서 초기화면을 변경후 삭제하세요';
+    $lang->msg_default_mid_cannot_delete = 'The default module cannot be removed. Set another as default module first.';
     $lang->msg_module_count_exceed = "The number of modules are limited, you cannot create more modules";
     $lang->msg_not_enabled_id = 'The ID cannot be used';
     $lang->msg_same_site = 'Modules cannot be moved between virtual sites.';
     $lang->about_move_module = "You may move modules between default site and virtual sites.<br />Moving modules among virtual sites is note allowed. Also, if there exists a module with same mid, there can be unexpected errors, thus move only modules which have unique mid.";
-    $lang->msg_greeting = 'Hello <strong>%s</strong>';
-    $lang->msg_module_type_setting = 'Module Type is not selected.';
 ?>
