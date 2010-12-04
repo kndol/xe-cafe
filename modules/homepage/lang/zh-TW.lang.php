@@ -1,6 +1,6 @@
 <?php
     /**
-     * @file   modules/homepage/lang/zh-TW.lang.phpzh-TW.lang.php
+     * @file   modules/homepage/lang/zh-TW.lang.php
      * @author zero (zero@nzeo.com) 翻譯︰royallin
      * @brief  虛擬網站(homepage)模組正體中文語言
      **/
@@ -41,7 +41,7 @@
     $lang->cafe_creation_privilege = '網站建立權限';
 
     $lang->cafe_main_mid = '網站 ID';
-    $lang->about_cafe_main_mid = '虛擬網站的網址為「http://網址/<b>ID</b>」，請輸入想要的ID值。';
+    $lang->about_cafe_main_mid = '虛擬網站的網址為「http://網址/<b>ID</b>」，請輸入想要的 ID 值。';
 
     $lang->default_menus = array(
         'home' => '首頁',
@@ -72,10 +72,10 @@
     $lang->cmd_go_home = "移至首頁";
     $lang->cmd_go_cafe_admin = '管理頁面';
     $lang->cmd_change_layout = "變更";
-    $lang->cmd_select_index = "選擇初始頁面";
+    $lang->cmd_select_index = "選擇首頁";
     $lang->cmd_add_new_menu = "新增選單";
     $lang->default_language = "預設語言";
-    $lang->about_default_language = "可以設置顯示語言給首次訪問的使用者。";
+    $lang->about_default_language = "可選擇用戶預設語言。";
 
     $lang->about_cafe_act = array(
         "dispHomepageManage" => "可設定網站風格",
@@ -83,10 +83,10 @@
         "dispHomepageMemberManage" => "可以檢視和管理會員",
         "dispHomepageTopMenu" => "可建立或管理左側或上端的選單",
         "dispHomepageComponent" => "可選擇是否啟用網頁編輯器組件/附加元件",
-        "dispHomepageCounter" => "可以檢視虛擬網站的訪問數據統計。",
+        "dispHomepageCounter" => "可以檢視虛擬網站的訪問統計資料。",
         "dispHomepageMidSetup" => "可詳細設定網站所使用的討論板，頁面等模組",
     );
-    $lang->about_cafe = "虛擬網站模組可快速建立網站，且容易進行設定。";
+    $lang->about_cafe = "虛擬網站模組可快速建立網站，且設定簡單。";
     $lang->about_cafe_title = "只有在管理時才看的到此標題。";
     $lang->about_menu_names = "可指定語言。<br/>如果只輸入其中一項，其他語言將會顯示一樣。";
     $lang->about_menu_option = "可設定按選單時，是否要以新視窗開啟。<br />選展開的話，是隨版面。";
