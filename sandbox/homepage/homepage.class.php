@@ -44,25 +44,6 @@
 
 		function _createSampleCafe()
 		{
-			// 카페레이아웃 생성
-            $args->site_srl = 0;
-            $args->layout_srl = getNextSequence();
-            $args->layout = 'xe_cafe';
-            $args->title = 'CafeXE default layout';
-			$args->layout_type = "P";
-
-            // DB 입력
-            $oLayoutAdminController = &getAdminController('layout');
-            $output = $oLayoutAdminController->insertLayout($args);
-            if(!$output->toBool()) return $output;
-
-            $oLayoutAdminController->initLayout($args->layout_srl, $args->layout);
-
-			$layout_srl = $args->layout_srl;
-
-			unset($args);
-
-            // 결과 리턴
             $oHomepageAdminController = &getAdminController('homepage');
             $oHomepageModel = &getModel('homepage');
             $oModuleModel = &getModel('module');
@@ -84,6 +65,7 @@
             $homepage_info = $oHomepageModel->getHomepageInfo($site_srl);
             $args->title = $cafe_title;
             $args->description = $cafe_description;
+            $args->layout_srl = $homepage_info->layout_srl;
             $args->layout_srl = $layout_srl;
             $args->site_srl = $site_srl;
             $output = executeQuery('homepage.updateHomepage', $args);
