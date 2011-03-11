@@ -29,7 +29,7 @@
             if(!$output->toBool()) return $output;
 
             $oLayoutAdminController = &getAdminController('layout');
-            $this->initLayout($args->layout_srl, $args->layout);
+            $oLayoutAdminController->initLayout($args->layout_srl, $args->layout);
 
 			$layout_srl = $args->layout_srl;
 
