@@ -17,6 +17,33 @@
 			$oModuleController->insertTrigger('moduleHandler.proc', 'homepage', 'controller', 'triggerApplyLayout', 'after');
 
 			/* 신규 카페 생성 시작 2011 03 11*/
+			// 패키지 설치시에만 샘플 카페 생성
+            $args->site_srl = 0;
+            $output = executeQuery('module.getSite', $args);
+            if(!$output->data->index_module_srl) {
+				// 카페 생성시 필요한 부수 정보(레이아웃, 위젯)이 없는경우는 샘플 카페 생성하지 않는다.
+				if($this->_checkCreateSampleCafe()) $this->_createSampleCafe();
+			}
+			/* 신규 카페 생성 종료 2011 03 11*/
+
+            return new Object();
+        }
+
+		function _checkCreateSampleCafe()
+		{
+			$layout = FileHandler::getRealPath('./layouts/xe_cafe');
+			$login_info = FileHandler::getRealPath('./widgets/login_info/skins/default'); 
+			$logged_members = FileHandler::getRealPath('./widgets/logged_members'); 
+			$member_group = FileHandler::getRealPath('./widgets/member_group'); 
+			$navigator = FileHandler::getRealPath('./widgets/navigator'); 
+			$rank_count = FileHandler::getRealPath('./widgets/rank_count'); 
+			$site_info = FileHandler::getRealPath('./widgets/site_info'); 
+
+			return (is_dir($layout) && is_dir($login_info) && is_dir($logged_members) && is_dir($member_group) && is_dir($navigator) && is_dir($rank_count) && is_dir($site_info));
+		}
+
+		function _createSampleCafe()
+		{
 			// 카페레이아웃 생성
             $args->site_srl = 0;
             $args->layout_srl = getNextSequence();
@@ -25,10 +52,10 @@
 			$args->layout_type = "P";
 
             // DB 입력
-            $output = $this->insertLayout($args);
+            $oLayoutAdminController = &getAdminController('layout');
+            $output = $oLayoutAdminController->insertLayout($args);
             if(!$output->toBool()) return $output;
 
-            $oLayoutAdminController = &getAdminController('layout');
             $oLayoutAdminController->initLayout($args->layout_srl, $args->layout);
 
 			$layout_srl = $args->layout_srl;
@@ -43,8 +70,8 @@
             $oMemberController = &getController('member');
 
             $cafe_id = 'sample_cafe';
-            $cafe_title = 'sample cafe입니다.';
-            $cafe_description = 'Cafe XE 샘플 입니다.';
+            $cafe_title = 'CafeXE 샘플 카페';
+            $cafe_description = '샘플로 설치된 카페입니다.';
 
             $domain = $cafe_id;
 
@@ -69,9 +96,8 @@
             $oMemberController->addMemberToGroup($logged_info->member_srl, $default_group->group_srl, $site_srl);
 
             $output = $oModuleController->insertSiteAdmin($site_srl, array($logged_info->user_id));
+		}
 
-            return new Object();
-        }
 
         /**
          * @brief 설치가 이상이 없는지 체크하는 method
