@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module version="0.2">
+<module version="0.2.1">
     <title xml:lang="ko">CafeXE</title>
     <title xml:lang="en">CafeXE</title>
 	<title xml:lang="vi">CafeXE</title>
@@ -14,8 +14,8 @@
     <description xml:lang="zh-CN">提供一种在XE内迅速建立子站点的功能。</description>
     <description xml:lang="zh-TW">使 XE 擁有建立及管理網站的功能。</description>
     <description xml:lang="jp">XEソリューションでCafeを運営・管理する機能を提供します。</description>
-    <version>0.2</version>
-    <date>2009-02-11</date>
+    <version>0.2.1</version>
+    <date>2011-03-11</date>
     <category>package</category>
 
     <author email_address="developers@xpressengine.com" link="http://xpressengine.com/">
