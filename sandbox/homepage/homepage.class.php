@@ -95,6 +95,7 @@
             $default_group = $oMemberModel->getDefaultGroup($site_srl);
             $oMemberController->addMemberToGroup($logged_info->member_srl, $default_group->group_srl, $site_srl);
 
+            $oModuleController = &getController('module');
             $output = $oModuleController->insertSiteAdmin($site_srl, array($logged_info->user_id));
 		}
 
