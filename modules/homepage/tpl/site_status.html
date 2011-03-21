@@ -18,8 +18,10 @@
 <div class="header4 gap1">
 
     <form action="./index.php" method="get" id="fo_calendar">
-    <input type="hidden" name="module" value="{$module}" />
     <input type="hidden" name="act" value="{$act}" />
+    <input type="hidden" name="vid" value="{$vid}" />
+    <input type="hidden" name="mid" value="{$mid}" />
+    <input type="hidden" name="type" value="{$type}" />
     <input type="hidden" name="selected_date" id="selected_date" value="{zDate('Ymd',$selected_date)}" />
 
     <table cellspacing="0" class="colTable">
