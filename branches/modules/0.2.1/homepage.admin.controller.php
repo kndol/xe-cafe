@@ -117,6 +117,8 @@
                 $args->module_srl = $module_info->module_srl;
                 $args->creation_group = implode(',',explode('|@|',$vars->creation_group));
                 $args->layout_srl = $vars->layout_srl;
+				debugPrint($mid);
+				debugPrint($args);
                 $oModuleController->insertModuleConfig('homepage', $args);
             }
         }

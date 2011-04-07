@@ -416,7 +416,6 @@ function changeMenuType(obj) {
         jQuery('#urlForm').css("display","table-row");
     } else {
         jQuery('#urlForm').css("display","none");
-
     }
 
 }
