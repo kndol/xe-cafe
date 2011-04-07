@@ -5,6 +5,8 @@
      * @brief  虛擬網站(homepage)模組正體中文語言
      **/
 
+	$lang->cafe_welcome_title = 'CafeXE has been installed successfully!';
+
     $lang->cafe = "虛擬網站"; 
 	$lang->cafe_management = 'CafeXE 관리';
     $lang->cafe_id = "網站 ID"; 
