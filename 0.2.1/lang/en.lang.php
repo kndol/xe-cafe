@@ -5,6 +5,8 @@
      * @brief  Default language pack for the CafeXE module.
      **/
 
+	$lang->cafe_welcome_title = 'CafeXE has been installed successfully!';
+
     $lang->cafe = "CafeXE"; 
 	$lang->cafe_management = 'CafeXE Management';
     $lang->cafe_id = "Cafe ID"; 
