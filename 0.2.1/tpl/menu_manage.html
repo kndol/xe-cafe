@@ -53,9 +53,10 @@
             <th scope="row"><div>{$lang->module_type}</div></th>
             <td colspan="2">
                 <select name="module_type" onchange="changeMenuType(this)">
-                    <option value="" selected="selected"></option>
+                    <option value=""></option>
                     <!--@foreach($homepage_config->allow_service as $k => $v)-->
-                    <option value="{$k}" <!--@if($v<1)-->disabled="disabled"<!--@end-->>{$k}</option>
+                    <!--option value="{$k}" <!--@if($v<1)-->disabled="disabled"<!--@end-->>{$k}</option-->
+                    <option value="{$k}">{$k}</option>
                     <!--@end-->
                     <option value="url">{$lang->url}</option>
                 </select>
