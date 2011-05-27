@@ -5,6 +5,8 @@
      * @brief  CafeXE(homepage)モジュールの日本語言語パッケージ（基本的な内容のみ）
      **/
 
+	$lang->cafe_welcome_title = 'CafeXE has been installed successfully!';
+
     $lang->cafe = 'CafeXE'; 
 	$lang->cafe_management = 'CafeXE管理';
     $lang->cafe_id = "CafeへのアクセスID"; 

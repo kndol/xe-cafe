@@ -5,6 +5,8 @@
      * @brief  站点(homepage)模块语言包
      **/
 
+	$lang->cafe_welcome_title = 'CafeXE has been installed successfully!';
+
     $lang->cafe = "站点"; 
 	$lang->cafe_management = 'CafeXE 관리';
     $lang->cafe_id = "카페 접속 ID"; 
