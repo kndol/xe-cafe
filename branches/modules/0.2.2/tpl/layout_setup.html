@@ -184,7 +184,7 @@
         <!--@elseif($var->type == "select")-->
             <select name="{$name}">
                 <!--@foreach($var->options as $key => $val)-->
-                <option value="{$key}" <!--@if($key==$var->value)-->selected="selected"<!--@end-->>{$val}</option>
+                <option value="{$key}" <!--@if($key==$var->value)-->selected="selected"<!--@end-->>{$val->val}</option>
                 <!--@end-->
             </select>
         <!--@end-->
