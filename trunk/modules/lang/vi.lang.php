@@ -8,6 +8,8 @@
 			░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 */
 
+	$lang->cafe_welcome_title = 'CafeXE has been installed successfully!';
+
     $lang->cafe = "CafeXE"; 
 	$lang->cafe_management = 'CafeXE 관리';
     $lang->cafe_id = "Cafe ID"; 

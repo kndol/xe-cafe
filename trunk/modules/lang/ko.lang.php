@@ -5,6 +5,8 @@
      * @brief  CafeXE(homepage) 모듈의 기본 언어팩
      **/
 
+	$lang->cafe_welcome_title = 'CafeXE 설치를 환영합니다.';
+
     $lang->cafe = 'CafeXE';
 	$lang->cafe_management = 'CafeXE 관리';
     $lang->cafe_id = "카페 접속 ID"; 
