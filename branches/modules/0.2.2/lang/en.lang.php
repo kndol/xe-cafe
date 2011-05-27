@@ -109,4 +109,7 @@
     $lang->msg_not_enabled_id = 'The ID cannot be used';
     $lang->msg_same_site = 'Modules cannot be moved between virtual sites.';
     $lang->about_move_module = "You may move modules between default site and virtual sites.<br />Moving modules among virtual sites is note allowed. Also, if there exists a module with same mid, there can be unexpected errors, thus move only modules which have unique mid.";
+
+	$lang->msg_greeting = '<strong>%s</strong> Welcome to homepage';
+	$lang->newest_comment = 'Recent Comments';
 ?>

@@ -109,4 +109,7 @@
     $lang->msg_not_enabled_id = '無法使用的帳號';
     $lang->msg_same_site = '無法在虛擬網站間移動模組。';
     $lang->about_move_module = '可在預設網站與虛擬網站間移動模組。<br/>Moving modules among virtual sites is note allowed. Also, if there exists a module with same mid, there can be unexpected errors, thus move only modules which have unique mid.';
+
+	$lang->msg_greeting = '<strong>%s</strong> Welcome to homepage';
+	$lang->newest_comment = 'Recent Comments';
 ?>
