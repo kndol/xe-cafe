@@ -294,25 +294,12 @@
             $oLayoutModel = &getModel('layout');
             $oHomepageModel = &getModel('homepage');
 
-            // 홈페이지 정보
-            $homepage_config = $oHomepageModel->getConfig($this->site_srl);
-            if(count($homepage_config->allow_service)) {
-                foreach($homepage_config->allow_service as $k => $v) {
-                    if($v<1) continue;
-                    $c = $oModuleModel->getModuleCount($this->site_srl, $k);
-                    $homepage_config->allow_service[$k] -= $c;
-                }
-            }
-            Context::set('homepage_config', $homepage_config);
-
             // 메뉴 정보 가져오기
             $menu_srl = $this->homepage_info->first_menu_srl;
 
             $menu_info = $oMenuModel->getMenu($menu_srl);
             Context::set('menu_info', $menu_info);
 
-            $group_list = $oMemberModel->getGroups($this->site_srl);
-            Context::set('group_list', $group_list);
 
             $selected_layout = $oLayoutModel->getLayout($this->homepage_info->layout_srl);
 
@@ -320,7 +307,7 @@
             $menu = array_shift($_menu_info);
             Context::set('menu_max_depth', $menu->maxdepth);
 
-            $this->setTemplateFile('menu_manage');
+            $this->setTemplateFile($this->act);
         }
 
         /**
