@@ -208,7 +208,7 @@
             $args->hover_btn = $source_args->hover_btn;
             $args->active_btn = $source_args->active_btn;
             $args->group_srls = $source_args->group_srls;
-
+			
             switch($mode) {
                 case 'insert' :
                         $args->menu_item_srl = getNextSequence();
