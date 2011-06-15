@@ -121,10 +121,14 @@
 							}
 							<!--@end-->
 						<!--@end-->
+						{@
+							$oModuleModel = &getModel('module');
+							$siteAminInfo = $oModuleModel->getSiteAdmin($homepageInfo->site_srl);
+						}
 						 <ul id='cafe_info_area' class="widgetMyInfo cafe_info">
-						 <li><span>Name</span><b>{$homepageInfo->title}</b></li>
+						 <li><span>Cafe Admin</span><b>{$siteAminInfo[0]->user_id}</b></li>
 						 <li><span>Article</span><em>{$articleCount}</em></li>
-						 <li><span>Join&nbsp;Date</span>{zdate($homepageInfo->regdate,'Y.m.d')}</li>
+						 <li><span>Create&nbsp;Date</span>{zdate($homepageInfo->regdate,'Y.m.d')}</li>
 						 </ul>		
 						 
 						<!--calculate comment and reply count -->
