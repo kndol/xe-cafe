@@ -6,10 +6,10 @@
     <title xml:lang="zh-TW">XE咖啡站点布局</title>
     <title xml:lang="jp">XE Cafe公式レイアウト</title>
     <description xml:lang="ko">
-        XE Cafe 공식 레이아웃입니다.
+        XE Cafe skin 디자인 스타일을 바탕으로 디테일적인 요소와 컬러에서 차별을 두어 디자인.
     </description>
     <description xml:lang="en">
-        XE Cafe's Site Layout.
+       The layout inherits the style of Cafe Home template, with the special details design, outstands page content .
     </description>
     <description xml:lang="zh-CN">
        XE Cafe skin的设计风格，秉承CAFÉ HOME,沿用其颜色，在此基础上，进行细节设计，色彩明快，注重内容。
@@ -18,7 +18,7 @@
        XE Cafe skin的设计风格，秉承CAFÉ HOME,沿用其颜色，在此基础上，进行细节设计，色彩明快，注重内容。
     </description>
     <description xml:lang="jp">
-        XE Cafeの公式レイアウトです。
+       XE Cafeの公式レイアウトです。
     </description>
     <version>0.1</version>
     <date>2011-06-02</date>
